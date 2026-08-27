@@ -17,5 +17,5 @@ class Usuario {
     var cpf: String = ""
 
     @Enumerated(EnumType.STRING)
-    var tipoUsuario: TipoUsuario = TipoUsuario.APOIADORA
+    var tipoUsuario: TipoUsuario = TipoUsuario.APOIADOR
 }
