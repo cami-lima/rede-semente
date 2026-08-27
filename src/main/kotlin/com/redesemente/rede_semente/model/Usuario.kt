@@ -8,14 +8,19 @@ import jakarta.persistence.GenerationType
 import jakarta.persistence.Id
 
 @Entity
-class Usuario {
+class Usuario(
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    var id: Long = 0
-    var nome: String = ""
-    var email: String = ""
-    var cpf: String = ""
+    var id: Long? = null,
+
+    var nome: String = "",
+
+    var cpf: String = "",
+
+    var email: String = "",
 
     @Enumerated(EnumType.STRING)
-    var tipoUsuario: TipoUsuario = TipoUsuario.APOIADOR
-}
+    var tipo: TipoUsuario = TipoUsuario.APOIADOR
+
+)

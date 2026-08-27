@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Usuário - Rede Semente</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <a class="logo" th:href="@{/}">Rede Semente</a>
+        <span class="tagline">apoio que cria raízes</span>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Cadastrar usuária</h1>
+    <p class="subtitle">Preencha os dados para entrar na rede.</p>
+
+    <form class="card-form" th:action="@{/usuarios}" th:object="${usuario}" method="post">
+
+        <label>Nome</label>
+        <input type="text" th:field="*{nome}">
+
+        <label>CPF</label>
+        <input type="text" th:field="*{cpf}">
+
+        <label>E-mail</label>
+        <input type="email" th:field="*{email}">
+
+        <label>Tipo</label>
+        <select th:field="*{tipo}">
+            <option th:value="MICROEMPREENDEDORA">Microempreendedora</option>
+            <option th:value="APOIADOR">Apoiadora</option>
+        </select>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+
+    <a class="link-voltar" th:href="@{/usuarios}">← Ver lista de usuárias</a>
+</div>
+</body>
+</html>

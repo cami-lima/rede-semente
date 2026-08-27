@@ -1,0 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Work+Sans:wght@400;500;600&display=swap');
+
+:root {
+    --color-bg: #FAF6EF;
+    --color-ink: #2B2A25;
+    --color-forest: #1F4B3D;
+    --color-forest-light: #3A6B54;
+    --color-gold: #C89B3C;
+    --color-rose: #B5576B;
+    --color-card: #FFFFFF;
+    --color-border: #E4DCC9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--color-bg);
+    color: var(--color-ink);
+    margin: 0;
+    padding: 0;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 24px;
+}
+
+header.site-header {
+    background-color: var(--color-forest);
+    padding: 20px 0;
+    border-bottom: 4px solid var(--color-gold);
+}
+
+header.site-header .container {
+    padding-top: 0;
+    padding-bottom: 0;
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+}
+
+.logo {
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+.tagline {
+    font-size: 0.85rem;
+    color: var(--color-gold);
+    font-style: italic;
+}
+
+h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 2.1rem;
+    color: var(--color-forest);
+    margin-bottom: 4px;
+    position: relative;
+    padding-left: 22px;
+}
+
+/* marcador "semente" antes dos títulos */
+h1::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    width: 12px;
+    height: 12px;
+    background-color: var(--color-gold);
+    border-radius: 60% 40% 55% 45% / 55% 45% 60% 40%;
+}
+
+.subtitle {
+    color: #6b6455;
+    margin-bottom: 32px;
+    font-size: 0.95rem;
+}
+
+/* Tabela reimaginada como lista de cards */
+.usuarios-lista {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.usuario-card {
+    background-color: var(--color-card);
+    border: 1px solid var(--color-border);
+    border-radius: 18px 6px 18px 6px;
+    padding: 16px 20px;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1.5fr 1fr;
+    gap: 12px;
+    align-items: center;
+    box-shadow: 0 2px 6px rgba(31, 75, 61, 0.06);
+}
+
+.usuario-card .campo-label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-rose);
+    margin-bottom: 2px;
+}
+
+.usuario-card .nome {
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    color: var(--color-forest);
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.badge-microempreendedora {
+    background-color: #EFE0C4;
+    color: #7A5A15;
+}
+
+.badge-apoiador {
+    background-color: #E3D6DB;
+    color: var(--color-rose);
+}
+
+/* Formulário */
+.card-form {
+    background-color: var(--color-card);
+    padding: 32px;
+    border-radius: 6px 24px 6px 24px;
+    border: 1px solid var(--color-border);
+    max-width: 440px;
+    box-shadow: 0 2px 8px rgba(31, 75, 61, 0.08);
+}
+
+label {
+    display: block;
+    margin-top: 16px;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--color-forest);
+}
+
+input, select {
+    width: 100%;
+    padding: 10px 12px;
+    margin-top: 6px;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-family: 'Work Sans', sans-serif;
+    font-size: 0.95rem;
+    background-color: #FEFDFB;
+}
+
+input:focus, select:focus {
+    outline: 2px solid var(--color-gold);
+    outline-offset: 1px;
+    border-color: var(--color-gold);
+}
+
+button {
+    margin-top: 24px;
+    padding: 12px 28px;
+    background-color: var(--color-forest);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+button:hover {
+    background-color: var(--color-forest-light);
+}
+
+a.link-voltar {
+    display: inline-block;
+    margin-top: 24px;
+    color: var(--color-rose);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+a.link-voltar:hover {
+    text-decoration: underline;
+}

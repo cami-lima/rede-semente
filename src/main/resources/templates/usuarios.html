@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Usuários - Rede Semente</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header class="site-header">
+    <div class="container">
+        <a class="logo" th:href="@{/}">Rede Semente</a>
+        <span class="tagline">apoio que cria raízes</span>
+    </div>
+</header>
+
+<div class="container">
+    <h1>Usuárias cadastradas</h1>
+    <p class="subtitle">Microempreendedoras e apoiadoras da comunidade.</p>
+
+    <div class="usuarios-lista">
+        <div class="usuario-card" th:each="usuario : ${usuarios}">
+            <div>
+                <span class="campo-label">Nome</span>
+                <span class="nome" th:text="${usuario.nome}"></span>
+            </div>
+            <div>
+                <span class="campo-label">CPF</span>
+                <span th:text="${usuario.cpf}"></span>
+            </div>
+            <div>
+                <span class="campo-label">E-mail</span>
+                <span th:text="${usuario.email}"></span>
+            </div>
+            <div>
+                    <span th:if="${usuario.tipo.name() == 'MICROEMPREENDEDORA'}"
+                          class="badge badge-microempreendedora">Microempreendedora</span>
+                <span th:if="${usuario.tipo.name() == 'APOIADOR'}"
+                      class="badge badge-apoiador">Apoiadora</span>
+            </div>
+        </div>
+    </div>
+
+    <a class="link-voltar" th:href="@{/usuarios/novo}">+ Cadastrar novo usuário</a>
+</div>
+</body>
+</html>
